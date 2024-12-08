@@ -1,8 +1,8 @@
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
-from langchain_community.embeddings import BedrockEmbeddings
-from langchain.llms.bedrock import Bedrock
+from langchain_community.vectorstores import FAISS
+from langchain_aws import BedrockEmbeddings
+from langchain_community.llms import Bedrock
 
 import json
 import os
@@ -16,7 +16,7 @@ bedrock_embeddings = BedrockEmbeddings(model_id="amazon.titan-embed-text-v1",cli
 
 
 def data_ingestion():
-    loader = PyPDFDirectoryLoader("./data")
+    loader = PyPDFDirectoryLoader("../data/")
     documents = loader.load()
 
     text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=1000)
