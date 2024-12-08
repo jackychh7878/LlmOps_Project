@@ -29,7 +29,7 @@ def data_ingestion():
 
 def get_vector_store(docs):
     vector_store_faiss = FAISS.from_documents(docs, bedrock_embeddings)
-    vector_store_faiss.save_local("faiss index")
+    vector_store_faiss.save_local("faiss_index")
 
 
 if __name__ == "__main__":
