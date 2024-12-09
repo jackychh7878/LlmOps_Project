@@ -36,7 +36,7 @@ question_answering_prompt = ChatPromptTemplate.from_messages(
 
 
 def get_llama_llm():
-    llm = BedrockLLM(model_id="meta.llama3-8b-instruct-v1:0", client=bedrock)
+    llm = BedrockLLM(model_id="meta.llama3-70b-instruct-v1:0", client=bedrock)
     return llm
 
 
